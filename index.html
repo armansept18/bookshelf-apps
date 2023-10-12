@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <header class="head_bar">
+      <h1 class="head_bar__title">Bookshelf Apps</h1>
+    </header>
+
+    <aside class="left_sidebar">
+      <section class="input_section">
+        <h2>Add New Book</h2>
+        <form id="inputBook">
+          <div class="input">
+            <label for="inputBookTitle">Title</label>
+            <input id="inputBookTitle" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor">Author</label>
+            <input id="inputBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear">Year</label>
+            <input id="inputBookYear" type="number" required />
+          </div>
+          <div class="input">
+            <label for="inputBookImage">Image URL</label>
+            <input id="inputBookImage" type="url" />
+          </div>
+          <div class="input_inline">
+            <label for="inputBookIsComplete">Complete Read</label>
+            <input id="inputBookIsComplete" type="checkbox" />
+          </div>
+          <button id="bookSubmit" type="submit">
+            Submit to
+            <span id="buku-dibaca">Incomplete Bookshelf</span>
+          </button>
+        </form>
+      </section>
+    </aside>
+    <main>
+      <section class="search_section">
+        <h2>Find Book</h2>
+        <form id="searchBook">
+          <label for="searchBookTitle"></label>
+          <input id="searchBookTitle" type="text" />
+          <button id="searchSubmit" type="submit" onclick="searchBook()">
+            Search
+          </button>
+        </form>
+      </section>
+
+      <section class="book_shelf">
+        <h2>Incomplete Reading</h2>
+        <div id="incompleteBookshelfList" class="book_list"></div>
+      </section>
+      <section class="book_shelf">
+        <h2>Complete Reading</h2>
+        <div id="completeBookshelfList" class="book_list"></div>
+      </section>
+    </main>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
