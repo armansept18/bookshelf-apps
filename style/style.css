@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -19,9 +20,12 @@ button {
   padding: 12px;
   background-color: darkblue;
   color: white;
-  text-align: center;
-  display: fixed;
+  position: fixed;
   top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
 
 .head_bar__title {
@@ -35,17 +39,18 @@ main {
   margin-left: auto;
   padding: 16px;
   box-sizing: border-box;
-  top: 0;
+  margin-top: 60px;
 }
 
 .left_sidebar {
   position: fixed;
-  top: 0;
+  top: 60;
   height: 100vh;
   width: 300px;
   background-color: #f0f0f0;
   padding: 16px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .input_section {
@@ -54,9 +59,9 @@ main {
   padding: 16px;
   border: 1px solid black;
   border-radius: 10px;
-  margin-top: 60px;
   width: 100%;
   box-sizing: border-box;
+  transition: 0.5s;
 }
 
 .input_section > h2 {
@@ -165,20 +170,39 @@ main {
 
 .book_shelf > .book_list {
   padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .book_shelf > .book_list > .book_item {
-  padding: 16px;
+  padding: 8 px;
   border: 1px solid black;
   border-radius: 5px;
-  margin: 16px 0;
+  margin: 8px 0;
+  max-width: 260px;
+  width: 100vw;
+  max-height: 420px;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book_shelf > .book_list > .book_item > h3,
 .book_shelf > .book_list > .book_item > p {
-  margin: 8px 0;
+  margin: 5px 0;
 }
-
+.book_shelf .book_list .book_item img {
+  max-width: 220px;
+  max-height: 250px;
+  width: 100vw;
+  height: 100%;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  object-fit: 1;
+}
 .book_shelf > .book_list > .book_item > .action > button {
   border: 0;
   padding: 8px;
@@ -200,12 +224,4 @@ main {
 .book_shelf > .book_list > .book_item > .action > .yellow {
   background-color: orange;
   color: white;
-}
-
-.book_shelf > .book_list > .book_item > img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 8px;
 }

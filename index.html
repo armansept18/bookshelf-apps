@@ -13,6 +13,11 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="./assets/image/book-209.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
@@ -26,19 +31,38 @@
         <form id="inputBook">
           <div class="input">
             <label for="inputBookTitle">Title</label>
-            <input id="inputBookTitle" type="text" required />
+            <input
+              id="inputBookTitle"
+              type="text"
+              placeholder="Write book title ..."
+              required
+            />
           </div>
           <div class="input">
             <label for="inputBookAuthor">Author</label>
-            <input id="inputBookAuthor" type="text" required />
+            <input
+              id="inputBookAuthor"
+              type="text"
+              placeholder="Write book author ..."
+              required
+            />
           </div>
           <div class="input">
             <label for="inputBookYear">Year</label>
-            <input id="inputBookYear" type="number" required />
+            <input
+              id="inputBookYear"
+              type="number"
+              placeholder="Year..."
+              required
+            />
           </div>
           <div class="input">
             <label for="inputBookImage">Image URL</label>
-            <input id="inputBookImage" type="url" />
+            <input
+              id="inputBookImage"
+              type="url"
+              placeholder="Paste your image url here ..."
+            />
           </div>
           <div class="input_inline">
             <label for="inputBookIsComplete">Complete Read</label>
@@ -56,7 +80,11 @@
         <h2>Find Book</h2>
         <form id="searchBook">
           <label for="searchBookTitle"></label>
-          <input id="searchBookTitle" type="text" />
+          <input
+            id="searchBookTitle"
+            type="text"
+            placeholder="Search Here ..."
+          />
           <button id="searchSubmit" type="submit" onclick="searchBook()">
             Search
           </button>
