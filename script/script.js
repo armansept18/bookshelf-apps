@@ -180,7 +180,7 @@ const editBook = (id) => {
   }
   bookToEdit.title = editedTitle || bookToEdit.title;
   bookToEdit.author = editedAuthor || bookToEdit.author;
-  bookToEdit.year = editedYear || bookToEdit.year;
+  bookToEdit.year = editedYear ? parseInt(editedYear, 10) : bookToEdit.year;
   bookToEdit.imageUrl = editedImageUrl || bookToEdit.imageUrl;
 
   saveData();
