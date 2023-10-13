@@ -86,7 +86,7 @@ const isDuplicateBook = (title, author, year, idToExclude) => {
       book.id !== idToExclude &&
       book.title.toLowerCase() === title.toLowerCase() &&
       book.author.toLowerCase() === author.toLowerCase() &&
-      book.year.toString() === year.toString()
+      book.year === year
     );
   });
 };
@@ -281,7 +281,7 @@ const generateBookObject = (id, title, author, year, imageUrl, isComplete) => {
     id: id,
     title: title,
     author: author,
-    year: year,
+    year: Number(year),
     imageUrl: imageUrl,
     isComplete: isComplete,
   };
