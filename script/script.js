@@ -238,18 +238,27 @@ const addBookToRead = (id) => {
 
   if (bookTarget == null) return;
 
-  bookTarget.isComplete = true;
-  document.dispatchEvent(new Event(RENDER_EVENT));
-  saveData();
+  const confirmation = window.confirm("Are You Finish Reading This Book?");
+  if (confirmation) {
+    bookTarget.isComplete = true;
+    document.dispatchEvent(new Event(RENDER_EVENT));
+    saveData();
+  }
 };
 const undoBookFromRead = (id) => {
   const bookTarget = findBook(id);
 
   if (bookTarget == null) return;
 
-  bookTarget.isComplete = false;
-  document.dispatchEvent(new Event(RENDER_EVENT));
-  saveData();
+  const confirmation = window.confirm(
+    "Are You Not Finished Reading This Book?"
+  );
+
+  if (confirmation) {
+    bookTarget.isComplete = false;
+    document.dispatchEvent(new Event(RENDER_EVENT));
+    saveData();
+  }
 };
 const removeBookFromRead = (id) => {
   const bookTarget = findBookIndex(id);
